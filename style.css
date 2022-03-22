@@ -13,6 +13,7 @@
 html {
     font-size: 62.5%;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -22,11 +23,12 @@ html {
     --white: #fafaff;
 
     /* Tamaño de variables */
-    --sm: 1.2rem; /* Para textos (parafos y así) */
+    --sm: 1.2rem;
+    /* Para textos (parafos y así) */
     --md: 1.6rem;
     --lg: 2.4rem;
     --xl: 3.2rem;
-    --xxl: 12rem;
+    --xxl: 8rem;
     /* Transitions */
     --in: all 0.3s ease-in-out;
     --out: all 0.6s ease-in-out;
@@ -47,7 +49,6 @@ html {
     color: var(--white);
     display: grid;
     justify-content: space-between;
-    padding: var(--sm) var(--md);
     position: fixed;
     transition: var(--out);
     top: 0;
@@ -56,7 +57,7 @@ html {
 }
 
 .bg {
-    background-color: var(--dark-gray);
+    background-color: rgba(43, 47, 50, 0.9);
     transition: var(--in);
 }
 
@@ -69,7 +70,7 @@ html {
 
 .header__nav ul li {
     font-size: var(--sm);
-    margin-right: var(--sm);
+    margin-right: 8px;
     color: var(--white);
 }
 
@@ -81,8 +82,9 @@ html {
 
 .link:hover {
     text-decoration: none;
-    color: var(--light-gray);
     transition: var(--in);
+    background-color: var(--dark-gray);
+    border-radius: 12px;
 }
 
 .header__image {
@@ -119,6 +121,12 @@ html {
     justify-content: left;
     transform-origin: top left;
     transition: var(--out);
+    border-radius: 12px;
+}
+
+.hero--estrategia .dropdown-menu,
+.hero--fiscal .dropdown-menu {
+    background-color: var(--dark-gray);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -194,13 +202,13 @@ html {
     margin: 20px 0;
 }
 
-.container__header h2{
+.container__header h2 {
     color: var(--white);
     font-size: var(--xl);
     text-align: center;
 }
 
-.container__header span::after{
+.container__header span::after {
     background-color: var(--white);
     content: '';
     display: block;
@@ -244,6 +252,8 @@ html {
     transition: var(--in);
 }
 
+
+/* Seccion clientes */
 .cliente__list li {
     display: flex;
     align-items: center;
@@ -253,7 +263,6 @@ html {
     margin-right: 12px;
 }
 
-/* Seccion clientes */
 .main__cliente {
     align-items: center;
     gap: 32px;
@@ -299,7 +308,7 @@ html {
     margin: auto 0;
 }
 
-.cliente__content > * {
+.cliente__content>* {
     margin-bottom: 12px;
 }
 
@@ -313,7 +322,9 @@ html {
     padding: 32px;
 }
 
-.home__footer h3, h4, label {
+.home__footer h3,
+h4,
+label {
     font-size: var(--md);
     margin-bottom: 12px;
 }
@@ -325,7 +336,8 @@ html {
     gap: 24px;
 }
 
-.home__footer input, textarea  {
+.home__footer input,
+textarea {
     background-color: transparent;
     border: 1px solid var(--white);
     color: var(--white);
@@ -345,7 +357,7 @@ html {
     justify-content: space-between;
 }
 
-.footer__email--top > div {
+.footer__email--top>div {
     display: flex;
     align-items: center;
     margin: 12px 0;
@@ -400,61 +412,113 @@ html {
 }
 
 /********************************
---------  legal.html ------------
+--------  servicios--paginas ------------
+    --dark-gray: #2b2f32;
+    --light-gray: #34393c;
 ********************************/
-.servicios__hero{
-    background-image: url("./images/heroLegal.jpg");
-    background-repeat: no-repeat;
+.degradado--left {
+    height: 100%;
+    background-image: linear-gradient(to right,
+            rgba(33, 37, 30, 1) 30%,
+            rgba(43, 47, 50, 0.5) 60%,
+            rgba(43, 47, 50, 0) 100%);
+}
+
+.degradado--right {
+    min-height: 100%;
+    background-image: linear-gradient(to right,
+            rgba(43, 47, 50, 0) 0%,
+            rgba(43, 47, 50, 0.2) 20%,
+            rgba(43, 47, 50, 0.7) 40%,
+            rgba(33, 37, 30, 1) 60%,
+            rgba(33, 37, 30, 1) 100%);
+}
+
+.servicios__hero {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-size: cover;
+    position: absolute;
 }
-.servicios__grid{
+
+
+.servicios__grid {
     display: grid;
-    padding-top: 5%;
-    grid-template-columns: 1.5fr 3fr;
+    grid-template-columns: 2.5fr 1.5fr 2.5fr;
     grid-template-rows: 1fr 0.2fr;
-    height: 100%;
+    padding-top: 5%;
+    min-height: 100vh;
 }
-.info__legal{
+
+.servicio__footer {
     color: var(--white);
     font-size: var(--md);
-    grid-column: 2/3 ;
-    margin: 2% 3%;
-    display: grid;
-    row-gap: 0.8em;
+    padding: 0 32px;
 }
-.info__legal h1{
-    font-size: var(--xxl);
-    text-align: end;
-    padding-right: 5%;
-}
-.info__legal h2{
-    font-size: var(--xl);
-}
-.info__legal p, li{
-    list-style:none;
-    font-size: var(--lg);
-}
-.info__legal ul{
-    margin: 5px 0;
-}
-.servicio__footer{
-    grid-column: 2/3 ;
-    justify-self: end;
-    color: var(--white);
-    font-size: var(--md);
-    padding: 32px;
-}
-.footer__info--margin{
+
+.footer__info--margin {
     margin: 0;
 }
-.button--servicios{
+
+.button--servicios {
     display: flex;
     justify-content: center;
     margin: 4% 12%;
 }
 
+/********************************
+--------  legal.html ------------
+********************************/
+.hero--legal {
+    background-image: url("./images/heroLegal.jpg");
+}
+
+.servicios__info {
+    color: var(--white);
+    margin: 32px;
+    display: grid;
+    row-gap: 0.8em;
+}
+
+.servicios__info h2 {
+    font-size: var(--md);
+    margin: 32px 0 16px 0;
+}
+
+.servicios__info p,
+.servicios__info li {
+    list-style: none;
+    font-size: var(--md);
+}
+
+.servicios__info ul {
+    margin-top: 12px;
+}
+
+.check {
+    width: 16px;
+}
+
+/* ******************************
+--------- estrategia.html ---------
+******************************* */
+.hero--estrategia {
+    background-image: url("./images/heroEstrategia.jpg");
+}
+
+/* ******************************
+--------- soluciones.html ---------
+******************************* */
+.hero--soluciones {
+    background-image: url("./images/heroSolucion.jpg");
+}
+
+/* ******************************
+--------- fiscal.html ---------
+******************************* */
+.hero--fiscal {
+    background-image: url("./images/heroFiscal.jpg");
+}
 
 /* ******************************
 --------- terminos.html ---------
@@ -466,15 +530,15 @@ html {
 .terminos {
     background-color: var(--dark-gray);
     color: var(--white);
-    font-size: var(--sm);
+    font-size: var(--md);
     padding: 32px;
 }
 
-.terminos h3{
+.terminos h3 {
     margin: 12px 0;
 }
 
-.terminos ol{
+.terminos ol {
     margin-left: 16px;
 }
 
@@ -483,37 +547,50 @@ html {
 ******************************* */
 
 @media (min-width: 320px) {
+
     /* Header */
     .header {
         grid-template-columns: 1fr;
+        padding: 12px;
     }
+
     .header__idioma {
         grid-row: 1;
     }
+
     .header__image {
         grid-row: 2;
     }
+
     .header__nav ul {
         justify-content: center;
         text-align: center;
+    }
+
+    .link {
+        padding: 2px;
     }
 
     /* Modal */
     .modal__main {
         grid-template-rows: repeat(4, 1fr);
     }
+
     .modal__logo {
         grid-row: 2/4;
         grid-template-columns: 1fr;
     }
+
     .modal__logo div:nth-child(1) {
         border: none;
     }
+
     .modal__logo div:nth-child(1),
     .modal__logo div:nth-child(2) {
         padding: 0;
         text-align: center;
     }
+
     .modal__link {
         grid-row: 4/5;
         font-size: var(--md);
@@ -535,9 +612,39 @@ html {
         width: 100%;
     }
 
+    .servicios__info h1 {
+        font-size: var(--xl);
+        text-align: center;
+    }
+
+    .servicios__info {
+        margin-top: 132px;
+    }
+
+    .servicios__info--left h1{
+        text-align: center;
+    }
+
+    .servicios__info--left {
+        grid-column: 1/4;
+    }
+    
+    .servicios__info--right {
+        grid-column: 1/4;
+    }
+
     /* Página términos y condiciones */
     .terminos {
         padding-top: 160px;
+    }
+
+    .footer--right {
+        justify-self: center;
+        grid-column: 1/4;
+    }
+    
+    .footer--left {
+        grid-column: 1/4;
     }
 }
 
@@ -545,26 +652,36 @@ html {
     /* Header */
     .header {
         grid-template-columns: 3fr 1fr 3fr;
+        padding: 12px 32px;
     }
+
     .header__idioma,
     .header__image {
         grid-row: auto;
     }
+
     .header__nav ul {
         justify-content: left;
+    }
+
+    .link {
+        padding: 8px;
     }
 
     /* Modal */
     .modal__main {
         grid-template-rows: repeat(3, 1fr);
     }
+
     .modal__logo {
         grid-row: 2/3;
-        grid-template-columns: 1fr  1fr;
+        grid-template-columns: 1fr 1fr;
     }
+
     .modal__logo div:nth-child(1) {
         border-right: 2px solid var(--white);
     }
+
     .modal__link {
         grid-row: 3/4;
     }
@@ -581,7 +698,7 @@ html {
     .responsive-container .cliente__image {
         text-align: right;
     }
-    
+
     .responsive-container-r .cliente__image {
         text-align: left;
     }
@@ -599,6 +716,36 @@ html {
         max-width: 600px;
     }
 
+    
+    .servicios__info h1 {
+        font-size: var(--xxl);
+        text-align: end;
+        padding-right: 12px;
+    }
 
+    .servicios__info {
+        margin-top: 62px;
+    }
+
+    .servicios__info--left h1{
+        text-align: left;
+    }
+    
+    .servicios__info--left {
+        grid-column: 1/3;
+    }
+    
+    .servicios__info--right {
+        grid-column: 2/4;
+    }
+
+    .footer--right {
+        justify-self: end;
+        grid-column: 2/4;
+    }
+    
+    .footer--left {
+        grid-column: 1/3;
+    }
 
 }
