@@ -18,17 +18,17 @@ html {
 
 :root {
     /* Colores */
-    --dark-gray: #2b2f32;
-    --light-gray: #34393c;
+    --dark-gray: #2a2e31;
+    --light-gray: #34383d;
     --white: #fafaff;
 
     /* Tamaño de variables */
-    --sm: 1.2rem;
+    --sm: 1.6rem;
     /* Para textos (parafos y así) */
-    --md: 1.6rem;
-    --lg: 2.4rem;
-    --xl: 3.2rem;
-    --xxl: 8rem;
+    --md: 2rem;
+    --lg: 3.2rem;
+    --xl: 7.2rem;
+    --xxl: 10rem;
     /* Transitions */
     --in: all 0.3s ease-in-out;
     --out: all 0.6s ease-in-out;
@@ -57,7 +57,7 @@ html {
 }
 
 .bg {
-    background-color: rgba(43, 47, 50, 0.9);
+    background-color: rgba(42,46,49,0.9);
     transition: var(--in);
 }
 
@@ -65,7 +65,6 @@ html {
     display: flex;
     align-items: center;
     list-style: none;
-    margin: 12px 0;
 }
 
 .header__nav ul li {
@@ -89,10 +88,6 @@ html {
 
 .header__image {
     text-align: center;
-}
-
-.header__image img {
-    height: 40px;
 }
 
 .header__idioma {
@@ -140,6 +135,19 @@ html {
 .dropdown-menu li {
     text-align: left;
     margin-bottom: 12px;
+}
+
+.handler-menu {
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border: none;
+    text-align: right;
+}
+
+.handler-menu svg {
+    fill: var(--white);
+    height: 24px;
 }
 
 /* ******************************
@@ -204,7 +212,6 @@ html {
 
 .container__header h2 {
     color: var(--white);
-    font-size: var(--xl);
     text-align: center;
 }
 
@@ -219,7 +226,7 @@ html {
 
 .servicios__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 160px));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 240px));
     justify-content: center;
 }
 
@@ -235,8 +242,8 @@ html {
 
 .servicios__item img {
     margin-bottom: 24px;
-    width: 60px;
-    height: 60px;
+    /*width: 120px;*/
+    height: 128px;
 }
 
 .servicios__content a {
@@ -266,7 +273,7 @@ html {
 .main__cliente {
     align-items: center;
     gap: 32px;
-    max-width: 960px;
+    max-width: 1200px;
     margin: 48px auto 0 auto;
 }
 
@@ -286,10 +293,6 @@ html {
 
 }
 
-.cliente__image img {
-    height: 210px;
-}
-
 .cliente__list span img {
     width: 20px;
 }
@@ -302,7 +305,7 @@ html {
     justify-content: center;
     flex-direction: column;
     padding: 32px;
-    height: 320px;
+    height: 400px;
     min-width: 220px;
     font-size: var(--sm);
     margin: auto 0;
@@ -419,19 +422,19 @@ textarea {
 .degradado--left {
     height: 100%;
     background-image: linear-gradient(to right,
-            rgba(33, 37, 30, 1) 30%,
-            rgba(43, 47, 50, 0.5) 60%,
-            rgba(43, 47, 50, 0) 100%);
+        rgba(42,46,49, 1) 30%,
+        rgba(42,46,49, 0.5) 60%,
+        rgba(42,46,49, 0) 100%);
 }
 
 .degradado--right {
     min-height: 100%;
     background-image: linear-gradient(to right,
-            rgba(43, 47, 50, 0) 0%,
-            rgba(43, 47, 50, 0.2) 20%,
-            rgba(43, 47, 50, 0.7) 40%,
-            rgba(33, 37, 30, 1) 60%,
-            rgba(33, 37, 30, 1) 100%);
+            rgba(42,46,49, 0) 0%,
+            rgba(42,46,49, 0.2) 20%,
+            rgba(42,46,49, 0.7) 40%,
+            rgba(42,46,49, 1) 60%,
+            rgba(42,46,49, 1) 100%);
 }
 
 .servicios__hero {
@@ -482,7 +485,7 @@ textarea {
 
 .servicios__info h2 {
     font-size: var(--md);
-    margin: 32px 0 16px 0;
+    margin: 62px 0 36px 0;
 }
 
 .servicios__info p,
@@ -496,7 +499,7 @@ textarea {
 }
 
 .check {
-    width: 16px;
+    width: 30px;
 }
 
 /* ******************************
@@ -525,6 +528,7 @@ textarea {
 ******************************* */
 .main__title h2 {
     font-size: var(--xl);
+    margin: 64px 0;
 }
 
 .terminos {
@@ -562,9 +566,35 @@ textarea {
         grid-row: 2;
     }
 
+    .header__image img {
+        height: 40px;
+        margin: 12px 0;
+    }
+
+    .header__nav {
+        display: none;
+        background-color: var(--dark-gray);
+        padding: 12px;
+        border-radius: 12px;
+    }
+
     .header__nav ul {
-        justify-content: center;
-        text-align: center;
+        align-items: flex-start;
+        justify-content: left;
+        text-align: left;
+        flex-direction: column;
+    }
+    
+    .header__nav ul li {
+        margin: 12px 0;
+    }
+
+    #iconHamburguer {
+        display: block;
+    }
+
+    #iconCross {
+        display: none;
     }
 
     .link {
@@ -597,6 +627,14 @@ textarea {
         padding: 16px;
     }
 
+    .index-main .main__hero {
+        height: 60vh;
+    }
+
+    .container__header h2 {
+        font-size: var(--lg);
+    }
+
     .responsive-container-r {
         grid-template-columns: 1fr;
         display: grid;
@@ -607,13 +645,18 @@ textarea {
         text-align: center;
     }
 
+    .cliente__image img {
+        width: 100%;
+        height: auto;
+    }
+
     .responsive-container-r .cliente__content {
         grid-row: 1;
         width: 100%;
     }
 
     .servicios__info h1 {
-        font-size: var(--xl);
+        font-size: var(--lg);
         text-align: center;
     }
 
@@ -660,8 +703,30 @@ textarea {
         grid-row: auto;
     }
 
-    .header__nav ul {
-        justify-content: left;
+    .header__image img {
+        height: 60px;
+        margin: 12px 0;
+    }
+
+    .header__nav {
+        display: block;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .header__nav > ul {
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+    #iconHamburguer {
+        display: none;
+    }
+
+    #iconCross {
+        display: none;
     }
 
     .link {
@@ -686,6 +751,15 @@ textarea {
         grid-row: 3/4;
     }
 
+    .index-main .main__hero {
+        height: auto;
+    }
+
+
+    .container__header h2 {
+        font-size: var(--xl);
+    }
+
     .responsive-container {
         grid-template-columns: 3fr 2fr;
         display: grid;
@@ -703,6 +777,11 @@ textarea {
         text-align: left;
     }
 
+    .cliente__image img {
+        height: 300px;
+        width: auto;
+    }
+
     .responsive-container-r .cliente__content {
         grid-row: auto;
     }
@@ -713,7 +792,7 @@ textarea {
     }
 
     .cliente__content {
-        max-width: 600px;
+        max-width: 700px;
     }
 
     
